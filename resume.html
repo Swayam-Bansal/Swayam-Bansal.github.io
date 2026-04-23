@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swayam Bansal | Resume</title>
+    <meta
+      name="description"
+      content="Resume page for Swayam Bansal."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-page="resume">
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="index.html">swayam</a>
+        <div class="header-actions">
+          <nav class="site-nav" aria-label="Primary navigation">
+            <a href="index.html">about</a>
+            <a href="projects.html">projects</a>
+            <a href="resume.html" aria-current="page">resume</a>
+            <a href="mailto:swayambansal01@gmail.com">contact</a>
+          </nav>
+          <button class="theme-toggle" type="button" aria-label="Toggle dark and light mode">
+            <span class="theme-toggle-text">light</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="content-column">
+        <section class="hero hero-compact">
+          <p class="hero-kicker">resume</p>
+          <h1>Resume.</h1>
+          <p class="hero-lead">
+            Preview the PDF here or open it directly in a new tab.
+          </p>
+          <div class="hero-links">
+            <a href="assets/resume.pdf" target="_blank" rel="noreferrer">open pdf</a>
+            <a href="assets/resume.pdf" download>download pdf</a>
+          </div>
+        </section>
+
+        <section class="section-block">
+          <h2>Resume PDF</h2>
+          <div class="resume-frame">
+            <iframe
+              class="resume-embed"
+              src="assets/resume.pdf#view=FitH"
+              title="Swayam Bansal resume"
+            ></iframe>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer site-footer-minimal">
+        <a class="footer-email" href="mailto:swayambansal01@gmail.com"
+          >swayambansal01@gmail.com</a
+        >
+        <p class="footer-meta">© <span id="year"></span> Swayam Bansal</p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
