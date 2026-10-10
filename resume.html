@@ -8,7 +8,7 @@
       name="description"
       content="Resume page for Swayam Bansal."
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20261010-3" />
   </head>
   <body data-page="resume">
     <div class="page-shell">
@@ -29,23 +29,25 @@
 
       <main class="content-column">
         <section class="hero hero-compact">
-          <p class="hero-kicker">resume</p>
           <h1>Resume.</h1>
           <p class="hero-lead">
-            Preview the PDF here or open it directly in a new tab.
+            My experience, education, and technical skills. Open the PDF for a full-size view.
           </p>
           <div class="hero-links">
-            <a href="assets/resume.pdf" target="_blank" rel="noreferrer">open pdf</a>
-            <a href="assets/resume.pdf" download>download pdf</a>
+            <a href="assets/resume.pdf?v=20261010" target="_blank" rel="noreferrer">open pdf ↗</a>
+            <a href="assets/resume.pdf?v=20261010" download="Swayam-Bansal-Resume.pdf">download pdf</a>
           </div>
         </section>
 
         <section class="section-block">
-          <h2>Resume PDF</h2>
+          <a class="resume-mobile-preview" href="assets/resume.pdf?v=20261010" target="_blank" rel="noreferrer" aria-label="Open Swayam Bansal's resume PDF in full size">
+            <img src="assets/resume-preview.png" alt="Preview of Swayam Bansal's updated resume. Open the PDF using the links above to read or download the full document." />
+            <span>Tap to open the full-size PDF ↗</span>
+          </a>
           <div class="resume-frame">
             <iframe
               class="resume-embed"
-              src="assets/resume.pdf#view=FitH"
+              src="assets/resume.pdf?v=20261010#view=FitH"
               title="Swayam Bansal resume"
             ></iframe>
           </div>
@@ -60,6 +62,6 @@
       </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20261010-3"></script>
   </body>
 </html>

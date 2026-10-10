@@ -142,13 +142,24 @@ const portfolio = {
   ],
   experience: [
     {
+      role: "AI Engineer",
+      company: "Community Dreams Foundation",
+      date: "May 2026 - Present",
+      highlights: [
+        "Built and deployed an AI-powered HR email automation system handling 50+ emails per day, using deterministic templates for frequent FAQs and retrieval for context-specific questions to improve accuracy while reducing unnecessary LLM usage.",
+        "Added production guardrails for sensitive-content detection, retrieval failure, and hallucination control; automatically escalated harassment-related or unsupported requests to HR and introduced an LLM-as-judge layer for response-quality evaluation.",
+        "Built a real-time AI voice assistant for routine HR calls, integrating telephony, speech recognition, LLM reasoning, and text-to-speech into an end-to-end system that resolved 60%+ of routine calls before human escalation.",
+        "Redesigned a production RAG assistant into a multi-agent architecture for project-specific, training, and general-support workflows, with semantic retrieval and role-aware SQL authorization checks to prevent cross-project data exposure.",
+        "Routed long-form training conversations to a smaller, lower-cost model and automatically generated HR tickets for unresolved support requests instead of returning unsupported answers."
+      ]
+    },
+    {
       role: "Data Analyst Intern",
-      company: "De-Bias (LinkedIn)",
+      company: "De-Bias",
       date: "Feb 2025 - Jun 2025",
       highlights: [
-        "Built and tuned regression models on high-dimensional datasets with 50+ features, improving predictive performance through feature engineering and hyperparameter optimization.",
-        "Performed exploratory analysis on large datasets and created visualizations to identify trends, anomalies, and drivers of model behavior.",
-        "Presented findings through structured reports and recommendations for stakeholders."
+        "Unified multi-year Pennsylvania housing-assistance survey data into a consistent analytical dataset, reconciling changing survey questions, categorical fields, and messy free-text responses for modeling.",
+        "Built and evaluated predictive models to identify the strongest indicators associated with housing-funding outcomes, using feature selection and imbalance-aware modeling to support more data-driven prioritization of limited government assistance and surface allocation inefficiencies."
       ]
     },
     {
@@ -156,9 +167,7 @@ const portfolio = {
       company: "Penn State University",
       date: "Aug 2023 - Dec 2024",
       highlights: [
-        "Led 50+ tutoring sessions on advanced mathematics topics including calculus and linear algebra.",
-        "Collaborated with other tutors to design review sessions and problem-solving strategies for large student groups.",
-        "Created instructional material that helped students improve course outcomes by up to two letter grades."
+        "Led 50+ tutoring sessions in calculus, linear algebra, and other advanced mathematics, translating complex quantitative concepts into structured problem-solving strategies."
       ]
     },
     {
@@ -166,9 +175,7 @@ const portfolio = {
       company: "Pennsylvania State University",
       date: "May 2023 - Aug 2023",
       highlights: [
-        "Redesigned a particle collision system for simulation environments to reduce latency and support near real-time processing.",
-        "Evaluated approximation strategies that balanced computational efficiency with physical realism.",
-        "Produced interactive reports to support research decisions with performance and outcome analysis."
+        "Redesigned a legacy particle-collision system for CFD simulations, evaluating collision approximations that traded physical realism for computational efficiency and enabled near-real-time simulation of large particle sets."
       ]
     }
   ],
@@ -269,7 +276,6 @@ if (projectList) {
         <a class="project-card-title-link" href="${project.links[0].href}" target="_blank" rel="noreferrer">
           <h3 class="project-card-title">${project.title}</h3>
         </a>
-        <p class="project-card-tagline">${project.tagline}</p>
         <p class="project-card-summary">${project.summary}</p>
         <div class="tag-row project-card-tags">
           ${project.tags.map((tag) => `<span class="tag">${tag}</span>`).join("")}
@@ -285,7 +291,7 @@ if (projectList) {
           .join("")}
         ${
           project.repo
-            ? `<a class="project-card-link" href="${project.repo.href}" target="_blank" rel="noreferrer"><code>${project.repo.label}</code></a>`
+            ? `<a class="project-card-link" href="${project.repo.href}" target="_blank" rel="noreferrer" aria-label="View ${project.title} code on GitHub">↗ code</a>`
             : ""
         }
         </div>
@@ -297,14 +303,16 @@ if (projectList) {
 
 if (experienceList) {
   portfolio.experience.forEach((item) => {
-    const experienceItem = document.createElement("article");
+    const experienceItem = document.createElement("details");
     experienceItem.className = "list-item experience-card";
     experienceItem.innerHTML = `
+      <summary>
       <div class="item-header">
         <h3 class="item-title">${item.role}</h3>
         <span class="item-meta">${item.date}</span>
       </div>
       <p class="item-subtitle">${item.company}</p>
+      </summary>
       <ul class="bullet-list">
         ${item.highlights.map((highlight) => `<li>${highlight}</li>`).join("")}
       </ul>
